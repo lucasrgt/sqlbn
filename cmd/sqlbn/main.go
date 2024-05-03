@@ -28,6 +28,10 @@ func main() {
 	// Check if both configuration files exist (yaml and yml)
 	var configFile string
 	var existErr error
+
+	fmt.Println("yaml config file:", configFileYAML)
+	fmt.Println("yml config file:", configFileYML)
+
 	if _, existErr = os.Stat(configFileYAML); existErr == nil {
 		if _, existErr = os.Stat(configFileYML); existErr == nil {
 			fmt.Println("Both 'sqlbn.yaml' and 'sqlbn.yml' found in current directory. Please remove one of them.")
