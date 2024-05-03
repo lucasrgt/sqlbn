@@ -27,17 +27,27 @@ func main() {
 
 	// Check if both configuration files exist (yaml and yml)
 	var configFile string
+	var err error // Declarar a variável err aqui
+
 	yamlExists, err := os.Stat(configFileYAML)
+	if err != nil && !os.IsNotExist(err) {
+		fmt.Println("Error checking for 'sqlbn.yaml':", err)
+		os.Exit(1)
+	}
+
 	ymlExists, err := os.Stat(configFileYML)
-	if !os.IsNotExist(err) {
-		if yamlExists != nil && ymlExists != nil {
-			fmt.Println("Both 'sqlbn.yaml' and 'sqlbn.yml' found in current directory. Please remove one of them.")
-			os.Exit(1)
-		} else if yamlExists != nil {
-			configFile = configFileYAML
-		} else {
-			configFile = configFileYML
-		}
+	if err != nil && !os.IsNotExist(err) {
+		fmt.Println("Error checking for 'sqlbn.yml':", err)
+		os.Exit(1)
+	}
+
+	if yamlExists != nil && ymlExists != nil {
+		fmt.Println("Both 'sqlbn.yaml' and 'sqlbn.yml' found in current directory. Please remove one of them.")
+		os.Exit(1)
+	} else if yamlExists != nil {
+		configFile = configFileYAML
+	} else if ymlExists != nil {
+		configFile = configFileYML
 	} else {
 		fmt.Println("Config file 'sqlbn.yaml' or 'sqlbn.yml' not found in current directory.")
 		os.Exit(1)
