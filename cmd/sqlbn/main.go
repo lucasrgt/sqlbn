@@ -27,7 +27,6 @@ func main() {
 
 	// Check if both configuration files exist (yaml and yml)
 	var configFile string
-	var err error // Declarar a variável err aqui
 
 	yamlExists, err := os.Stat(configFileYAML)
 	if err != nil && !os.IsNotExist(err) {
