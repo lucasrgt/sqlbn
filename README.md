@@ -4,7 +4,7 @@
 <h3>Configuration</h3>
 
 Create a configuration file named <code>sqlbn.yaml</code> or <code>sqlbn.yml</code>
-then configure the directories of the folder containing the queries and the output query file directory.
+then configure the directories of the folder containing the queries and the output query file directory and to-generate sql file name.
 
 <b>Example:</b> <code>sqlbn.yaml</code>
 
