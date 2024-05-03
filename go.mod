@@ -1,4 +1,4 @@
-module github.com/lucasrgt/go-bundle-queries
+module github.com/lucasrgt/sqlbn
 
 go 1.22.2
 
