@@ -108,7 +108,7 @@ func generateSQL(config Config) error {
 				continue
 			}
 
-			if _, err := out.WriteString("\n"); err != nil {
+			if _, err := out.WriteString("\n\n"); err != nil {
 				fmt.Println("Error writing to output file:", err)
 				continue
 			}
