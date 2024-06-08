@@ -1,3 +1,5 @@
+<h1>GO SQL BUNDLER - Unifies multiple sql files into one</h1>
+
 <h3>GO >= 1.22:</h3> 
 <code>go install github.com/lucasrgt/sqlbn/cmd/sqlbn@latest</code>
 
